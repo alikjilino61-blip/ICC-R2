@@ -1,0 +1,96 @@
+ICC-R2: Implementation Protocol and Roadmap (v1.0 → v1.1)
+==========================================================
+
+Author: Alik Gimranov
+ORCID: 0009-0001-5952-9887
+Affiliation: Independent Researcher, Ufa, Russia
+Email: alikjilino61@gmail.com
+
+DOI (v1.0): 10.5281/zenodo.20041595
+DOI (v1.1): [to be assigned after upload]
+License: CC-BY-4.0
+
+ABSTRACT
+--------
+This document defines the implementation protocol for Information-Copying 
+Cosmology (ICC-R2), a framework where spacetime and cosmological dynamics 
+emerge from stochastic copying of a simplicial complex with defects.
+
+Key results (Q2 2026):
+• Defect parameter Δ* = 0.105 ± 0.005 derived from reaction-diffusion 
+  simulations on a 16³ lattice (Track 1)
+• Geometric factor α = 3.00 calibrated to H(z) suppression (Track 4)
+• Successful integration of ICC background component into CLASS v3.3.4
+• Calibrated linear response: H₀(μ) = H₀^ΛCDM × (1 + 0.5 μ) for μ ∈ [0, 0.05]
+• Bridge script: Δ* → μ = α·Δ* → H(z) predictions
+
+FILES INCLUDED
+--------------
+code/
+  ├── scan_mu_icc.py          # Scan Omega_icc → H0 calibration
+  ├── bridge_delta_to_class.py # Lattice Δ* → Cosmology H0 bridge
+  ├── scan_delta_star.py      # Auto-scan Δ* ∈ [0.08, 0.12] → H(z)
+  └── scan_delta.py           # Legacy delta scanning script
+
+results/
+  ├── scan_mu/                # H0 vs mu_icc calibration data + plots
+  ├── auto_scan/              # H0 vs Delta* auto-scan results
+  └── bridge/                 # Bridge script reports
+
+infrastructure/
+  ├── test_icc.ini            # CLASS config with ICC component
+  ├── test_lcdm.ini           # Reference ΛCDM config
+  └── icc_config.json         # ICC parameters (JSON)
+
+drafts/
+  └── draft_methods.tex       # Preprint Methods section draft
+
+REPRODUCIBILITY
+---------------
+• All scripts accept --seed for deterministic runs
+• Results logged in structured JSON format
+• CLASS integration verified with background_verbose=1
+• Python dependencies: numpy, scipy, matplotlib, classy (optional)
+
+QUICK START
+-----------
+# Install dependencies
+pip install numpy scipy matplotlib
+
+# Run Track 4: mu_icc scan
+cd code/
+python scan_mu_icc.py
+
+# Run Bridge: Delta* -> H0
+python bridge_delta_to_class.py --delta 0.105 --negative
+
+# Run Auto-scan: Delta* range
+python scan_delta_star.py
+
+CITATION
+--------
+If you use this work, please cite:
+
+Gimranov, A. (2026). ICC-R2: Implementation Protocol and Roadmap (v1.1) 
+[Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+
+BibTeX:
+@dataset{gimranov2026iccr2v11,
+  author  = {Gimranov, Alik},
+  title   = {{ICC-R2: Implementation Protocol and Roadmap}},
+  year    = {2026},
+  version = {1.1.0},
+  doi     = {10.5281/zenodo.XXXXXXX},
+  url     = {https://doi.org/10.5281/zenodo.XXXXXXX},
+  license = {CC-BY-4.0},
+  publisher = {Zenodo}
+}
+
+CHANGELOG v1.1
+--------------
+• Added CLASS v3.3.4 integration with ICC background component
+• Verified linear response H0(μ) = H0^ΛCDM × (1 + 0.5 μ)
+• Added bridge script: Δ* → μ → H(z)
+• Added auto-scanning for Δ* ∈ [0.08, 0.12]
+• Included draft Methods section for preprint
+

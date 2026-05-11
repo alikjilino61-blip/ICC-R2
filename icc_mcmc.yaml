@@ -1,0 +1,29 @@
+params:
+  delta_star:
+    prior: {min: 0.05, max: 0.15}
+    ref: {dist: norm, loc: 0.105, scale: 0.005}
+  alpha:
+    prior: {min: 2.5, max: 3.5}
+    ref: 3.00
+  H0:
+    prior: {min: 50, max: 90}
+    ref: 67.4
+
+likelihood:
+  icc_likelihood:
+    path: /home/alik/QW/icc-r2-q2/likelihood_icc.py
+    alpha: 3.00
+    sign: -1.0
+  h0_prior:
+    value:
+      H0: 73.0
+    sigma: 1.0
+
+sampler:
+  mcmc:
+    burn_in: 50
+    Rminus1_stop: 0.1
+    covmat: auto
+
+output: chains/icc_test/
+stop_at: 300

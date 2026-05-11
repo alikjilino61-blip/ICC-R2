@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ICC-R2_Track2_Neutrino.aux
+The style file: plainnat.bst
+Database file #1: references_track2.bib
+Warning--empty journal in gimranov2026roadmap
+You've used 3 entries,
+            2773 wiz_defined-function locations,
+            614 strings with 5492 characters,
+and the built_in function-call counts, 1361 in all, are:
+= -- 116
+> -- 86
+< -- 1
++ -- 30
+- -- 27
+* -- 112
+:= -- 231
+add.period$ -- 13
+call.type$ -- 3
+change.case$ -- 16
+chr.to.int$ -- 3
+cite$ -- 7
+duplicate$ -- 61
+empty$ -- 102
+format.name$ -- 30
+if$ -- 272
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 3
+newline$ -- 27
+num.names$ -- 12
+pop$ -- 27
+preamble$ -- 1
+purify$ -- 13
+quote$ -- 0
+skip$ -- 46
+stack$ -- 0
+substring$ -- 21
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 33
+warning$ -- 1
+while$ -- 11
+width$ -- 0
+write$ -- 52
+(There was 1 warning)

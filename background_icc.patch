@@ -1,0 +1,23 @@
+--- a/source/background.c
++++ b/source/background.c
+@@ -450,6 +450,22 @@ int background_init(
+       pba->has_icc = _TRUE_;
+     }
+ 
++  /* ICC-R2: copying component in background */
++  if (pba->has_icc) {
++    double a_icc = 1.0/(1.+z);
++    /* rho_icc ~ mu * a^(-3*(1+w_icc)) + stochastic term */
++    double w_icc = -0.95 + ppr->mu_icc * a_icc;
++    double rho_icc = ppr->mu_icc * pow(a_icc, -3.*(1.+w_icc));
++    
++    pba->rho_icc = rho_icc;
++    pba->p_icc = w_icc * rho_icc;
++    
++    /* Add to total densities */
++    pba->rho_tot += rho_icc;
++    pba->p_tot += pba->p_icc;
++    pba->H_prime += 4.*M_PI*pba->G*(pba->rho_tot + pba->p_tot/3.);
++  }
++
+   /* ... rest of background code ... */

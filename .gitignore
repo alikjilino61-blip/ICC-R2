@@ -1,0 +1,10 @@
+# LaTeX auxiliary files (без .pdf, чтобы финальные статьи остались в репо)
+*.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz
+# Python cache
+__pycache__/ *.pyc *.pyo
+# CLASS & Cobaya outputs
+chains/ results/icc_* results/lcdm_*
+# OS & Archives
+.DS_Store Thumbs.db *.zip *.tar.gz
+# Temp folders
+temp_fix/
