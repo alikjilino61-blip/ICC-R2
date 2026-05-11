@@ -1,10 +1,13 @@
-# LaTeX auxiliary files (без .pdf, чтобы финальные статьи остались в репо)
+# LaTeX-артефакты
 *.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz
-# Python cache
+# Python-кэш
 __pycache__/ *.pyc *.pyo
-# CLASS & Cobaya outputs
-chains/ results/icc_* results/lcdm_*
-# OS & Archives
+# Результаты CLASS (оставляем только финальные графики и JSON)
+chains/
+results/scan_mu/*.dat results/scan_mu/*.ini results/scan_mu/*.json
+results/auto_scan/*.dat results/auto_scan/*.ini results/auto_scan/*.json
+results/bridge/*.dat results/bridge/*.ini results/bridge/*.json
+# OS и архивы
 .DS_Store Thumbs.db *.zip *.tar.gz
-# Temp folders
+# Временные папки
 temp_fix/
