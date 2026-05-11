@@ -1,13 +1,13 @@
-# LaTeX-артефакты
-*.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz
-# Python-кэш
+# LaTeX auxiliary
+*.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.fls *.synctex.gz
+# Python cache
 __pycache__/ *.pyc *.pyo
-# Результаты CLASS (оставляем только финальные графики и JSON)
-chains/
-results/scan_mu/*.dat results/scan_mu/*.ini results/scan_mu/*.json
-results/auto_scan/*.dat results/auto_scan/*.ini results/auto_scan/*.json
-results/bridge/*.dat results/bridge/*.ini results/bridge/*.json
-# OS и архивы
-.DS_Store Thumbs.db *.zip *.tar.gz
-# Временные папки
-temp_fix/
+# CLASS source & heavy data (оставляем только исходники в class_modifications/)
+class_public/
+# Results & configs (тяжёлые .dat/.ini/.json не нужны в Git)
+results/
+ICC-R2_Roadmap_v1.1/results/
+ICC-R2_Track2_Neutrino/results/
+# Archives & OS
+*.zip *.tar.gz *.dat *.ini *.json
+.DS_Store Thumbs.db
